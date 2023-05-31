@@ -1,0 +1,171 @@
+/* -----------------------------------------
+	10. Mobile menu
+----------------------------------------- */
+.mobile-nav-open {
+  overflow: hidden;
+}
+
+.navigation-mobile-wrap {
+  background-color: $grey;
+  padding: 0 15px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease;
+
+  .mobile-nav-open & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .admin-bar & {
+    // Height of the admin bar in mobile
+    top: 46px;
+    padding-bottom: 46px;
+  }
+}
+
+.navigation-mobile {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  color: $text-color;
+
+  li {
+    list-style: none;
+    width: 100%;
+    position: relative;
+
+    &[class*="fa-"] {
+      font-family: $primary-font;
+      &::before {
+        font-size: 0.8em;
+        position: absolute;
+        top: 1.25em;
+      }
+
+      a {
+        padding-left: 20px;
+      }
+    }
+
+    &.fas {
+      &::before {
+        font-family: $font-awesome;
+        font-weight: 900;
+      }
+    }
+
+    &.far {
+      &::before {
+        font-family: $font-awesome;
+        font-weight: 400;
+      }
+    }
+
+    &.fab {
+      &::before {
+        font-family: $font-awesome-brands;
+        font-weight: 400;
+      }
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  .menu-item-expanded {
+    > ul {
+      display: block;
+    }
+
+    > .menu-item-sub-menu-toggle {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  a {
+    @include text-truncate;
+    border-bottom: 1px solid $border-color;
+    padding: 15px 45px 15px 0;
+    display: block;
+    font-weight: 700;
+    color: currentColor;
+  }
+}
+
+.menu-item-sub-menu-toggle {
+  height: auto;
+  width: auto;
+  background: none;
+  box-shadow: none;
+  display: block;
+  flex: none;
+  padding: 15px 15px;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  font-size: 15px;
+  color: $text-color;
+  background-color: transparent;
+
+  &:focus {
+    outline: 1px dotted currentColor;
+  }
+
+  &::before {
+    display: inline-block;
+    content: "\f107";
+    font-family: $font-awesome;
+    transition: transform 0.18s ease;
+  }
+}
+
+.navigation-mobile-dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid $border-color;
+  padding: 14px;
+  text-align: right;
+  font-weight: 700;
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    color: $text-color;
+  }
+
+  &::after {
+    font-family: $font-awesome;
+    content: "\f00d";
+    font-size: 1.2rem;
+    margin-left: 7px;
+  }
+}
+
+.mobile-nav-trigger {
+  text-transform: uppercase;
+  display: none;
+  color: inherit;
+  float: right;
+
+  &:hover {
+    color: inherit;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+}

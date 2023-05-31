@@ -1,0 +1,57 @@
+/*!
+Theme Name: Blockchain Lite
+Theme URI: https://www.cssigniter.com/themes/blockchain-lite/
+Author: CSSIgniter
+Author URI: https://www.cssigniter.com/
+Description: Blockchain lite is a modern and clean business theme for WordPress, ideal for businesses in the financial sector, consultancies, investing firms, businesses dealing with cryptocurrencies, blockchain companies and more. It supports WooCommerce for online store creation and is regularly updated to ensure continuing compatibility. Its responsive design will give your visitors the perfect mobile browsing experience on phones, tablets & retina enabled displays. It is fast and lightweight, coded with best SEO practises in mind, supports RTL languages and is translation ready. It offers a flexible top bar and header, multiple column layouts for the blog with a masonry effect, unlimited custom color schemes, custom typography, a flexible footer, custom logos and more. It supports the WordPress block editor and is also compatible with the most popular page builders like Elementor, Divi, Brizy and Beaver Builder.
+Version: 1.4.1
+Requires at least: 6.1
+Tested up to: 6.1.1
+Requires PHP: 5.6
+Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, news
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: blockchain-lite
+*/
+
+/* -----------------------------------------
+	Table of Contents
+--------------------------------------------
+
+.. 01. General
+.. 02. Main Navigation
+.. 03. Header
+.. 04. Hero Area
+.. 05. Modules
+.. 06. Footer
+.. 07. Comments
+.. 08. Widgets Styling
+.. 09. WordPress defaults
+.. 10. Mobile Menu
+.. 11. External Plugins
+.. 12. Grid Effects
+.. 13. Utilities
+.. 14. Ecommerce
+.. 15. Global Mediaqueries
+*/
+
+@import 'inc/assets/css/inc/normalize';
+@import 'inc/assets/css/inc/variables';
+@import 'inc/assets/css/inc/mixins/grid';
+@import 'inc/assets/css/inc/mixins/mixins';
+@import 'inc/assets/css/inc/grid';
+@import 'inc/assets/css/inc/ci-base';
+@import 'inc/assets/css/inc/navigation';
+@import 'inc/assets/css/inc/header';
+@import 'inc/assets/css/inc/hero';
+@import 'inc/assets/css/inc/modules';
+@import 'inc/assets/css/inc/footer';
+@import 'inc/assets/css/inc/comments';
+@import 'inc/assets/css/inc/widgets';
+@import 'inc/assets/css/inc/blocks';
+@import 'inc/assets/css/inc/wp-defaults';
+@import 'inc/assets/css/inc/mobile-nav';
+@import 'inc/assets/css/inc/external';
+@import 'inc/assets/css/inc/utilities';
+@import 'inc/assets/css/inc/ecommerce';
+@import 'inc/assets/css/inc/mediaqueries';

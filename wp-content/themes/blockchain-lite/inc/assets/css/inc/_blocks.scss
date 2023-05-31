@@ -1,0 +1,326 @@
+/* -----------------------------------------
+Gutenberg general style resets
+----------------------------------------- */
+/* -----------------------------------------
+Gutenberg Blocks
+----------------------------------------- */
+$content-spacing-base: 30px !default;
+
+.entry-content,
+.entry,
+.wp-block-column {
+  > [class*="wp-block-"] {
+    margin-bottom: $content-spacing-base;
+  }
+}
+
+// Audio embed with caption
+.wp-block-audio {
+  margin-bottom: 1.5em;
+
+  audio {
+    width: 100%;
+    margin: 0;
+  }
+
+  figcaption {
+    color: inherit;
+    opacity: .7;
+  }
+}
+
+// Video embed with caption
+.wp-block-video {
+  margin-bottom: 1.5em;
+
+  video {
+    width: 100%;
+    margin: 0;
+  }
+
+  figcaption {
+    color: inherit;
+    opacity: .7;
+  }
+}
+
+/* Paragraph Block
+=================================== */
+.has-drop-cap:not(:focus) {
+	&::first-letter {
+		padding: 0 .2rem .2rem 0;
+		font-size: 4rem;
+		line-height: .65;
+	}
+}
+
+/* Embed blocks
+=================================== */
+.wp-block-embed {
+  iframe {
+    margin: 0;
+  }
+
+  figcaption {
+    color: inherit;
+    opacity: .7;
+  }
+}
+
+/* Image Block
+=================================== */
+.wp-block-image {
+  figcaption {
+    color: inherit;
+    opacity: .7;
+  }
+}
+
+/* Separator Block
+=================================== */
+.wp-block-separator {
+  margin: $content-spacing-base 0;
+}
+
+/* Latest Comments Block
+=================================== */
+.wp-block-latest-comments {
+  padding-left: 0;
+
+  .wp-block-latest-comments__comment-avatar {
+    padding: 0;
+  }
+
+  .wp-block-latest-comments__comment-date {
+    color: inherit;
+    opacity: .7;
+  }
+}
+
+/* Latest Posts Block
+=================================== */
+.wp-block-latest-posts {
+	list-style: none;
+	padding: 0;
+
+	li {
+		margin-bottom: 15px;
+	}
+
+  .wp-block-latest-posts__post-date {
+    color: inherit;
+    opacity: .7;
+  }
+}
+
+/* Gallery Block
+=================================== */
+.wp-block-gallery {
+  li {
+    &::before {
+      display: none;
+    }
+
+    a {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+/* Columns Block
+=================================== */
+.wp-block-column {
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Quote Block
+=================================== */
+.wp-block-quote {
+  &.is-style-plain {
+    background: none;
+	  font-style: normal;
+    padding: 0;
+    margin-top: 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  &.is-style-large {
+	  padding: 1em 1em 1em 4em;
+  }
+
+  @include media-breakpoint-down(md) {
+    &.is-style-large {
+      p {
+          font-size: 1.3em;
+          line-height: 1.25;
+      }
+    }
+  }
+}
+
+/* Pull Quote Block
+=================================== */
+.wp-block-pullquote {
+  font-style: normal;
+  padding: 30px 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  &.has-text-align-left,
+  &.has-text-align-right {
+	  max-width: 100%;
+
+    @include media-breakpoint-down(md) {
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+
+  blockquote {
+	  font-style: normal;
+    padding: 0;
+    border: 0;
+    background: none;
+
+    p {
+      font-size: 1.25em;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1em;
+      }
+    }   
+
+    .entry-content & {
+      background: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+/* Table Block
+=================================== */
+.wp-block-table {
+	.has-text-align-left {
+		text-align: left;
+	}
+
+	.has-text-align-center {
+		text-align: center;
+	}
+
+	.has-text-align-right {
+		text-align: right;
+	}
+}
+
+/* Button Block
+=================================== */
+.wp-block-button {
+	&.is-style-outline {
+		.wp-block-button__link {
+			border: 2px solid $accent-color;
+			color: $accent-color;
+		}
+	}
+}
+
+/* Social Links
+=================================== */
+.wp-block-social-links  {
+  &.is-style-blockchain-lite-socials {
+    gap: 0.2em;
+
+    .wp-block-social-link {
+      border-radius: 10%;
+    }
+  }
+}
+
+/* -----------------------------------------
+GutenBee Styles
+----------------------------------------- */
+/* GutenBee theme grid class
+=================================== */
+.theme-grid > .wp-block-gutenbee-container-inner {
+	@include make-container-max-widths($exclude_initial_gutter: true);
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media-breakpoint-down(xs) {
+		padding-left: map_get($grid-gutter-widths, xs) / 2;
+		padding-right: map_get($grid-gutter-widths, xs) / 2;
+	}
+}
+
+/* Post Types Block
+=================================== */
+.wp-block-gutenbee-post-types {
+  .gutenbee-row {
+    .gutenbee-post-types-item-meta {
+      font-size: 13px;
+    }
+  }
+
+  .gutenbee-post-types-item-excerpt {
+    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 1.466666667;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .gutenbee-row .gutenbee-post-types-item-media {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.gutenbee-post-types-item-more {
+  font-size: 15px;
+  display: inline-block;
+  color: $accent-secondary;
+  font-weight: 700;
+
+  &::after {
+    @include font-awesome('\f105');
+    margin-left: 10px;
+    color: $accent-color;
+    font-size: 1.1em;
+    position: relative;
+    top: 1px;
+  }
+}
+
+/* Food Menu Block
+=================================== */
+.wp-block-gutenbee-food-menu-item {
+	.wp-block-gutenbee-heading {
+		margin-bottom: 0;
+	}
+}
+
+/* Testimonial Block
+=================================== */
+.wp-block-gutenbee-testimonial {
+	&::before,
+	&::after {
+		display: none;
+	}
+
+	.entry-content & {
+		border-top: 1px solid $border-color;
+		border-bottom: 1px solid $border-color;
+		padding: 30px 0;
+    background: none;
+	}
+}
